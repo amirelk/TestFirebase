@@ -109,6 +109,6 @@ public class Suppliers extends AppCompatActivity {
 
 
         // testing GitHub upload
-        //// ilya coment - 1
+        // upload to MASTERRRRRRRRRRRRRRRRRRRRRRRRRRRR
     }
 }
