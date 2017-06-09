@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_login"
+    tools:context="com.test.amirelkayam.testfirebase.Registration">
+
+    <EditText
+        android:id="@+id/registerEmail"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="74dp"
+        android:ems="10"
+        android:hint="כתובת מייל"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="43dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:id="@+id/registerPassword"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:ems="10"
+        android:hint="סיסמא"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="117dp"
+        android:layout_below="@+id/registerEmail"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+
+    <Button
+        android:id="@+id/btnRegisterNow"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="75dp"
+        android:onClick="btnRegisterNow_Click"
+        android:background="@drawable/register_now_btn"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="375dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
