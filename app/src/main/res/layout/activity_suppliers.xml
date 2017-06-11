@@ -19,6 +19,7 @@
         android:layout_toLeftOf="@+id/btn_findSuppliers"
         android:layout_toStartOf="@+id/btn_findSuppliers"
         android:layout_marginTop="26dp"
+        android:onClick="btnNewSupplier_Click"
         android:id="@+id/btn_newSuppliers" />
 
     <Button
@@ -28,6 +29,7 @@
         android:layout_marginRight="19dp"
         android:layout_marginEnd="19dp"
         android:id="@+id/btn_findSuppliers"
+        android:onClick="btnFindSuppliers_Click"
         android:layout_alignTop="@+id/editText_findSuppliers"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -45,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="חפש ספק"
         android:ems="10"
         android:layout_marginTop="43dp"
         android:id="@+id/editText_findSuppliers"
@@ -53,5 +55,15 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:text="חזור"
+        android:textColor="#0033CC"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp" />
 
 </RelativeLayout>

@@ -25,7 +25,6 @@ public class ResetPassword extends AppCompatActivity {
     private Button btnReset, btnBack;
     private ImageView mMainImage;
 
-/// ilya  can you see?
     private FirebaseAuth auth;
 
     @Override
@@ -41,7 +40,7 @@ public class ResetPassword extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
-        mMainImage.setOnClickListener(new View.OnClickListener() {
+        mMainImage.setOnClickListener(new View.OnClickListener() {      /// app logo - if you click its go back screen
             @Override
             public void onClick(View v) {
                 finish();

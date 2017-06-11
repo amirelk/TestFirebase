@@ -23,7 +23,8 @@
         <activity android:name=".ResetPassword" />
         <activity android:name=".Customers" />
         <activity android:name=".Sale" />
-        <activity android:name=".Inventory"></activity>
+        <activity android:name=".Inventory" />
+        <activity android:name=".NewSupplier"></activity>
     </application>
 
 </manifest>

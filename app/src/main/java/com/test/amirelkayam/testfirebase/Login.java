@@ -21,7 +21,7 @@ public class Login extends AppCompatActivity {
 
     private EditText loginEmail;
     private EditText loginPassword;
-    private Button mButtonResetPassword;
+  //  private Button mButtonResetPassword;
 
     private FirebaseAuth firebaseAuth;
 
@@ -33,7 +33,7 @@ public class Login extends AppCompatActivity {
 
         loginEmail = (EditText) findViewById(R.id.loginEmail);
         loginPassword = (EditText) findViewById(R.id.loginPassword);
-        mButtonResetPassword = (Button) findViewById(R.id.btn_reset_password);
+     //   mButtonResetPassword = (Button) findViewById(R.id.btn_reset_password);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
