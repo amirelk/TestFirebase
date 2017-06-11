@@ -31,7 +31,7 @@ import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {// Start MainActivity
 
     DatabaseReference mDatabase;
     Button mButtonChange;
@@ -46,9 +46,11 @@ public class MainActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {// start onCreate
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Customers");
         mButtonChange = (Button) findViewById(R.id.change_btn);
@@ -122,9 +124,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-    }
+    }// end onCreate
 
 
-}
+}// END MainActivity
 
-/*ilya coment*/
