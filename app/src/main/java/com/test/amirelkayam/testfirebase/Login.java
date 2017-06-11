@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ public class Login extends AppCompatActivity {
 
     private EditText loginEmail;
     private EditText loginPassword;
+    private Button mButtonResetPassword;
 
     private FirebaseAuth firebaseAuth;
 
@@ -31,12 +33,26 @@ public class Login extends AppCompatActivity {
 
         loginEmail = (EditText) findViewById(R.id.loginEmail);
         loginPassword = (EditText) findViewById(R.id.loginPassword);
+        mButtonResetPassword = (Button) findViewById(R.id.btn_reset_password);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
     }
 
     public void btnLogin_Click(View v){
+
+        String email = loginEmail.getText().toString().trim();
+        String password = loginPassword.getText().toString().trim();
+
+        if(TextUtils.isEmpty(email)) {
+            Toast.makeText(getApplicationContext(), "הקלד כתובת מייל!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if(TextUtils.isEmpty(password)) {
+            Toast.makeText(getApplicationContext(), "הקלד סיסמא!", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         final ProgressDialog progressDialog = ProgressDialog.show(Login.this, "אנא המתן...", "טוען...", true);
 
@@ -57,6 +73,11 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void btnResetPassword_Click(View v){
+        Intent intent_resetPassword = new Intent(getApplicationContext(), ResetPassword.class);
+        startActivity(intent_resetPassword);
     }
 
     public void btnRegister_Click(View v){

@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,6 +22,9 @@ public class Registration extends AppCompatActivity {
 
     private EditText regEmail;
     private EditText regPassword;
+    private Button btnBack;
+    private ImageView mMainImage;
+
 
     private FirebaseAuth firebaseAuth;
 
@@ -30,8 +35,25 @@ public class Registration extends AppCompatActivity {
 
         regEmail = (EditText) findViewById(R.id.registerEmail);
         regPassword = (EditText) findViewById(R.id.registerPassword);
+        btnBack = (Button) findViewById(R.id.btn_back);
+        mMainImage = (ImageView)findViewById(R.id.main_image);
+
 
         firebaseAuth = FirebaseAuth.getInstance();
+
+        mMainImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 
@@ -83,6 +105,7 @@ public class Registration extends AppCompatActivity {
         @Override
         public void onComplete(@NonNull Task<AuthResult> task) {        ///// Chaking if reg is success --> skip to login , else - stay in the same screen end say - Error \\\
             progressDialog.dismiss();
+
             if (task.isSuccessful()) {
                 Toast.makeText(Registration.this, "הרשמה הצליחה! הנך מועבר למסך הכניסה", Toast.LENGTH_LONG).show();
                 Intent i = new Intent(Registration.this, Login.class);
