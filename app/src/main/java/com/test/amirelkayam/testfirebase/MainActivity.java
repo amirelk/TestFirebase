@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {// Start MainActivity
 
 
 
-
+        // go to CLASS >>  Suppliers.class
         mSuppliers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
