@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,15 +34,10 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {// Start MainActivity
 
-    DatabaseReference mDatabase;
-    Button mButtonChange;
-    EditText mNameField;
-    EditText mEmailField;
-    EditText mPhoneField;
-    EditText mShowName;
+    private ImageView mMainImage;
 
-
-    Button mSuppliers;
+    private Button mSuppliers;
+    private Button mCustomers;
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -50,76 +46,28 @@ public class MainActivity extends AppCompatActivity {// Start MainActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Customers");
-        mButtonChange = (Button) findViewById(R.id.change_btn);
-
-        mNameField = (EditText) findViewById(R.id.name_field);
-        mEmailField = (EditText) findViewById(R.id.email_field);
-        mPhoneField = (EditText)  findViewById(R.id.phone_field);
-        mShowName = (EditText) findViewById(R.id.show_name);
-
+        mMainImage = (ImageView) findViewById(R.id.main_image);
 
         mSuppliers = (Button) findViewById(R.id.btn_suppliers);
-
+        mCustomers = (Button) findViewById(R.id.btn_customers);
 
 
         // go to CLASS >>  Suppliers.class
         mSuppliers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent_sup = new Intent(getApplicationContext(), Suppliers.class);
-                startActivity(intent_sup);
+                Intent intent_suppliers = new Intent(getApplicationContext(), Suppliers.class);
+                startActivity(intent_suppliers);
             }
         });
 
 
-/*
-        mDatabase.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                String showName = dataSnapshot.getValue().toString();
-                mShowName.setText("Name : " + showName);
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-*/
-
-        mButtonChange.setOnClickListener(new View.OnClickListener() {
+        // go to CLASS >>  Customers.class
+        mCustomers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                String name = mNameField.getText().toString().trim();
-                String email = mEmailField.getText().toString().trim();
-                String phone = mPhoneField.getText().toString().trim();
-
-
-                HashMap<String, String> dataMap = new HashMap<String, String>();
-                dataMap.put("Name", name);
-                dataMap.put("Email", email);
-                dataMap.put("Phone", phone);
-
-
-                mDatabase.push().setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(MainActivity.this, "Stored...", Toast.LENGTH_LONG).show();
-
-                        } else {
-                            Toast.makeText(MainActivity.this, "Error...", Toast.LENGTH_LONG).show();
-
-                        }
-                    }
-                });
-
+                Intent intent_customers = new Intent(getApplicationContext(), Customers.class);
+                startActivity(intent_customers);
             }
         });
 

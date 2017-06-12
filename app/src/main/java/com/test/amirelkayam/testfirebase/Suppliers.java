@@ -31,7 +31,7 @@ public class Suppliers extends AppCompatActivity { // Start Suppliers
         setContentView(R.layout.activity_suppliers);
 
         mButtonFindSuppliers = (Button) findViewById(R.id.btn_findSuppliers);
-        mButtonNewSupplier = (Button) findViewById(R.id.btn_newSuppliers);
+        mButtonNewSupplier = (Button) findViewById(R.id.btn_newSupplier);
         mMainImage = (ImageView)findViewById(R.id.main_image);
         mFindSuppliers = (EditText)findViewById(R.id.editText_findSuppliers);
         btnBack = (Button) findViewById(R.id.btn_back);
@@ -51,19 +51,11 @@ public class Suppliers extends AppCompatActivity { // Start Suppliers
             }
         });
 
-/*
-        /// itsirat mazinim
-        View.OnClickListener ocBtn_findSuppliers =new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                //TODO som Action
-                Toast.makeText(Suppliers.this, "ocBtn_findSuppliers", Toast.LENGTH_SHORT).show();
-            }
-        };
-*/
 
     }  // End OnCreate
 
+
+    // OnClick NewSupplier from suppliers XML
     public void btnNewSupplier_Click(View v){
         Intent intent_newSupplier = new Intent(getApplicationContext(), NewSupplier.class);
         startActivity(intent_newSupplier);

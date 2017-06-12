@@ -70,13 +70,6 @@ public class Registration extends AppCompatActivity {
             return;
         }
 
-        ///  Need to write Rule for Email typing - with @ \\\
-/*
-        if (email.length() < 6){
-            Toast.makeText(getApplicationContext(), "סיסמא חייבת להיות מינימום 6 תווים", Toast.LENGTH_SHORT).show();
-            return;
-        }
-*/
         if(TextUtils.isEmpty(password)) {
             Toast.makeText(getApplicationContext(), "הקלד סיסמא!", Toast.LENGTH_SHORT).show();
             return;

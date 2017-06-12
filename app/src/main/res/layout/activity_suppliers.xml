@@ -12,7 +12,7 @@
     tools:context="com.test.amirelkayam.testfirebase.Suppliers">
 
     <Button
-        android:text="יצירת ספק חדש"
+        android:text="הוספת ספק חדש"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_findSuppliers"
@@ -20,7 +20,7 @@
         android:layout_toStartOf="@+id/btn_findSuppliers"
         android:layout_marginTop="26dp"
         android:onClick="btnNewSupplier_Click"
-        android:id="@+id/btn_newSuppliers" />
+        android:id="@+id/btn_newSupplier" />
 
     <Button
         android:text="חיפוש"
@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="חפש ספק"
+        android:hint="הזן שם ספק לחיפוש..."
         android:ems="10"
         android:layout_marginTop="43dp"
         android:id="@+id/editText_findSuppliers"
